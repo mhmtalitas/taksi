@@ -2,6 +2,7 @@
 
 import { PhoneIcon, StarIcon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface TaxiCardProps {
   taxi: {
@@ -22,20 +23,23 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
       whileHover={{ scale: 1.02, boxShadow: taxi.isPremium ? '0 20px 25px -5px rgba(234, 179, 8, 0.2)' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
       className={`bg-white rounded-xl overflow-hidden ${taxi.isPremium ? 'border-2 border-yellow-400' : 'shadow-lg'}`}
     >
-      <div 
-        className={`relative h-56 bg-cover bg-center transition-transform duration-700 hover:scale-105`}
-        style={{ backgroundImage: `url(${taxi.image})` }}
-      >
+      <div className={`relative h-56`}>
+        <Image 
+          src={taxi.image}
+          alt={taxi.name}
+          fill
+          className="object-cover transition-transform duration-700 hover:scale-105"
+        />
         {taxi.isPremium && (
           <motion.div 
             initial={{ x: 100 }}
             animate={{ x: 0 }}
-            className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+            className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg z-10"
           >
             Premium
           </motion.div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-[1]" />
       </div>
 
       <div className={`p-8 ${taxi.isPremium ? 'bg-gradient-to-b from-yellow-50 to-white' : ''}`}>
