@@ -4,6 +4,7 @@ import TaxiCard from './components/TaxiCard';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const taxis = {
   premium: [
@@ -84,7 +85,7 @@ export default function Home() {
             Beşikdüzü Taksi Hizmetleri
           </h1>
           <p className="text-xl text-gray-800 max-w-2xl mx-auto">
-            Beşikdüzü'nün her noktasına 7/24 güvenli ve konforlu ulaşım
+            Beşikdüzü&apos;nün her noktasına 7/24 güvenli ve konforlu ulaşım
           </p>
         </motion.div>
 
@@ -163,10 +164,11 @@ export default function Home() {
                 className="bg-white rounded-lg overflow-hidden shadow-lg"
               >
                 <div className="h-48 relative">
-                  <img 
+                  <Image 
                     src={ad.image} 
                     alt={ad.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
                 <div className="p-6">

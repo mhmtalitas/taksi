@@ -1,7 +1,6 @@
 'use client';
 
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
-import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
@@ -15,7 +14,7 @@ export default function Footer() {
               Beşikdüzü Taksi
             </h3>
             <p className="text-gray-400">
-              7/24 güvenli ve konforlu yolculuk için yanınızdayız. Beşikdüzü'nün her noktasına hızlı ulaşım sağlıyoruz.
+              7/24 güvenli ve konforlu yolculuk için yanınızdayız. Beşikdüzü&apos;nün her noktasına hızlı ulaşım sağlıyoruz.
             </p>
           </div>
 
