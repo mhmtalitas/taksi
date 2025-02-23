@@ -19,7 +19,7 @@ const taxis = {
       image: "https://images.unsplash.com/photo-1597007066704-67bf2068d5b2?w=800"
     },
     {
-      id: 3,
+      id: 2,
       name: "Lüks VIP Transfer",
       description: "Özel şoförle konforlu seyahat deneyimi",
       rating: 5.0,
@@ -27,11 +27,21 @@ const taxis = {
       features: ["Özel Şoför", "Lüks Araçlar", "Rezervasyon İmkanı"],
       phone: "+90 555 345 6789",
       image: "https://images.unsplash.com/photo-1599012307530-1c4e0636f5b9?w=800"
+    },
+    {
+      id: 3,
+      name: "Business Transfer",
+      description: "İş seyahatleri için özel transfer hizmeti",
+      rating: 4.9,
+      isPremium: true,
+      features: ["Wifi", "İkram Servisi", "Kurumsal Fatura"],
+      phone: "+90 555 789 1234",
+      image: "https://images.unsplash.com/photo-1632923057155-dd35366509c9?w=800"
     }
   ],
   standard: [
     {
-      id: 2,
+      id: 4,
       name: "Ekonomik Taksi",
       description: "Uygun fiyatlı, güvenilir ulaşım çözümü",
       rating: 4.5,
@@ -41,7 +51,7 @@ const taxis = {
       image: "https://images.unsplash.com/photo-1534520092937-4717c0b18103?w=800"
     },
     {
-      id: 4,
+      id: 5,
       name: "Şehir Turu Taksi",
       description: "Şehri keşfetmek için özel tur hizmeti",
       rating: 4.7,
@@ -49,6 +59,16 @@ const taxis = {
       features: ["Şehir Turu", "Turistik Gezi", "Rehberlik"],
       phone: "+90 555 456 7890",
       image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?w=800"
+    },
+    {
+      id: 6,
+      name: "7/24 Taksi",
+      description: "Günün her saati hizmetinizdeyiz",
+      rating: 4.6,
+      isPremium: false,
+      features: ["24 Saat", "Hızlı Teslimat", "Güler Yüzlü Hizmet"],
+      phone: "+90 555 890 1234",
+      image: "https://images.unsplash.com/photo-1511527844068-006b95d162c2?w=800"
     }
   ]
 };
@@ -63,9 +83,23 @@ const ads = [
   },
   {
     id: 2,
-    title: "Restaurant",
-    description: "Eşsiz lezzetler, unutulmaz anlar",
+    title: "Balık Restaurant",
+    description: "Taze deniz ürünleri ve eşsiz Karadeniz lezzetleri",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800",
+    link: "#"
+  },
+  {
+    id: 3,
+    title: "Sahil Kafe",
+    description: "Deniz manzarasına karşı keyifli kahvaltı ve atıştırmalıklar",
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800",
+    link: "#"
+  },
+  {
+    id: 4,
+    title: "Fındık Bahçesi",
+    description: "Organik fındık ürünleri ve yöresel lezzetler",
+    image: "https://images.unsplash.com/photo-1613365850361-ad85467a6eb6?w=800",
     link: "#"
   }
 ];
@@ -102,7 +136,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
           >
             {taxis.premium.map((taxi, index) => (
               <motion.div
@@ -130,7 +164,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
           >
             {taxis.standard.map((taxi, index) => (
               <motion.div
@@ -150,18 +184,21 @@ export default function Home() {
           <motion.h2 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-3xl font-bold text-black text-center mb-12"
+            className="text-3xl font-bold text-black text-center mb-4"
           >
-            Önerilen İşletmeler
+            Beşikdüzü&apos;nden Önerilen İşletmeler
           </motion.h2>
+          <p className="text-center text-gray-700 mb-12 max-w-2xl mx-auto">
+            Size en iyi hizmeti sunmak için güvendiğimiz yerel işletmeler
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {ads.map((ad, index) => (
               <motion.div
                 key={ad.id}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                className="bg-white rounded-lg overflow-hidden shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + index * 0.1 }}
+                className="bg-white rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
               >
                 <div className="h-48 relative">
                   <Image 

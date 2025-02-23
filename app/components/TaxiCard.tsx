@@ -20,8 +20,12 @@ interface TaxiCardProps {
 export default function TaxiCard({ taxi }: TaxiCardProps) {
   return (
     <motion.div
-      whileHover={{ scale: 1.02, boxShadow: taxi.isPremium ? '0 20px 25px -5px rgba(234, 179, 8, 0.2)' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
-      className={`bg-white rounded-xl overflow-hidden ${taxi.isPremium ? 'border-2 border-yellow-400' : 'shadow-lg'}`}
+      whileHover={{ scale: 1.02, boxShadow: taxi.isPremium ? '0 25px 30px -5px rgba(234, 179, 8, 0.3)' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
+      className={`bg-white rounded-xl overflow-hidden ${
+        taxi.isPremium 
+          ? 'border-2 border-yellow-400 shadow-[0_10px_20px_-5px_rgba(234,179,8,0.3)]' 
+          : 'shadow-lg'
+      }`}
     >
       <div className={`relative h-56`}>
         <Image 
@@ -34,16 +38,28 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
           <motion.div 
             initial={{ x: 100 }}
             animate={{ x: 0 }}
-            className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg z-10"
+            className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg z-10"
           >
             Premium
           </motion.div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-[1]" />
+        <div className={`absolute inset-0 bg-gradient-to-t ${
+          taxi.isPremium 
+            ? 'from-black/60 via-black/30' 
+            : 'from-black/50'
+        } to-transparent z-[1]`} />
       </div>
 
-      <div className={`p-8 ${taxi.isPremium ? 'bg-gradient-to-b from-yellow-50 to-white' : ''}`}>
-        <h3 className={`text-2xl font-bold mb-2 ${taxi.isPremium ? 'text-yellow-600' : 'text-black'}`}>
+      <div className={`p-8 ${
+        taxi.isPremium 
+          ? 'bg-gradient-to-b from-yellow-50 via-yellow-50/50 to-white' 
+          : ''
+      }`}>
+        <h3 className={`text-2xl font-bold mb-2 ${
+          taxi.isPremium 
+            ? 'bg-gradient-to-r from-yellow-600 to-yellow-800 text-transparent bg-clip-text' 
+            : 'text-black'
+        }`}>
           {taxi.name}
         </h3>
         
@@ -55,7 +71,11 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
           {[...Array(5)].map((_, index) => (
             <StarIcon 
               key={index} 
-              className={`h-5 w-5 ${index < Math.floor(taxi.rating) ? 'text-yellow-400' : 'text-gray-300'}`} 
+              className={`h-5 w-5 ${
+                index < Math.floor(taxi.rating) 
+                  ? taxi.isPremium ? 'text-yellow-500' : 'text-yellow-400'
+                  : 'text-gray-300'
+              }`} 
             />
           ))}
           <span className="ml-2 text-sm font-semibold text-gray-700">
@@ -70,9 +90,15 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`flex items-center text-sm ${taxi.isPremium ? 'text-gray-700' : 'text-gray-600'}`}
+              className={`flex items-center text-sm ${
+                taxi.isPremium ? 'text-gray-700' : 'text-gray-600'
+              }`}
             >
-              <span className={`w-2 h-2 ${taxi.isPremium ? 'bg-yellow-400' : 'bg-gray-400'} rounded-full mr-3`} />
+              <span className={`w-2 h-2 ${
+                taxi.isPremium 
+                  ? 'bg-gradient-to-r from-yellow-400 to-yellow-600' 
+                  : 'bg-gray-400'
+              } rounded-full mr-3`} />
               {feature}
             </motion.div>
           ))}
@@ -82,10 +108,11 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
           href={`tel:${taxi.phone}`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className={`flex items-center justify-center gap-2 w-full py-4 rounded-lg font-bold transition-all
-            ${taxi.isPremium 
-              ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 shadow-lg' 
-              : 'bg-yellow-400 text-black hover:bg-yellow-500'}`}
+          className={`flex items-center justify-center gap-2 w-full py-4 rounded-lg font-bold transition-all ${
+            taxi.isPremium 
+              ? 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 shadow-lg' 
+              : 'bg-yellow-400 text-black hover:bg-yellow-500'
+          }`}
         >
           <PhoneIcon className="h-5 w-5" />
           <span>{taxi.phone}</span>

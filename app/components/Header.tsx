@@ -14,27 +14,29 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="text-yellow-400 text-2xl font-bold cursor-pointer flex items-center"
+            className="text-yellow-400 text-lg md:text-2xl font-bold cursor-pointer flex items-center"
           >
-            <span className="text-2xl mr-2">🚕</span>
-            Beşikdüzü Taksi
+            <span className="text-lg md:text-2xl mr-2">🚕</span>
+            <span>Beşikdüzü Taksi</span>
           </motion.div>
           
-          <div className="flex items-center gap-8">
-            <motion.div 
+          <div className="flex items-center gap-2 sm:gap-8">
+            <motion.a
+              href="tel:08501234567"
               whileHover={{ scale: 1.05 }}
-              className="text-yellow-400 flex items-center cursor-pointer"
+              className="text-yellow-400 flex items-center cursor-pointer text-sm sm:text-base"
             >
-              <PhoneIcon className="h-5 w-5 mr-2" />
-              <span>0850 123 45 67</span>
-            </motion.div>
+              <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">0850 123 45 67</span>
+              <span className="sm:hidden">Ara</span>
+            </motion.a>
             
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-yellow-400 text-black px-6 py-2 rounded-lg font-bold hover:bg-yellow-500 transition-all"
+              className="bg-yellow-400 text-black px-3 sm:px-6 py-1.5 sm:py-2 rounded-lg text-sm sm:text-base font-bold hover:bg-yellow-500 transition-all whitespace-nowrap"
             >
-              Taksi Çağır
+              <span>Taksi Çağır</span>
             </motion.button>
           </div>
         </div>
