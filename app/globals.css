@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #FFD700;
+  --secondary-color: #000000;
+}
+
+body {
+  @apply bg-black text-white;
+}
+
+.taxi-card {
+  @apply border-2 rounded-lg p-6 transition-all duration-300;
+}
+
+.taxi-card:hover {
+  @apply transform scale-105;
+}
+
+.premium-badge {
+  @apply bg-yellow-400 text-black px-3 py-1 rounded text-sm font-bold;
+}
+
+.taxi-title {
+  @apply text-yellow-400 text-xl font-bold mb-2;
+}
+
+.taxi-description {
+  @apply text-gray-400 text-sm mb-4;
+}
+
+.taxi-feature {
+  @apply flex items-center text-gray-300 text-sm;
+}
+
+.call-button {
+  @apply w-full flex items-center justify-center gap-2 py-3 rounded
+         bg-yellow-400 text-black font-bold hover:bg-yellow-500 
+         transition-all duration-300;
+}
+
+.header {
+  @apply bg-black border-b border-yellow-500 sticky top-0 z-50;
+}
+
+.header-content {
+  @apply container mx-auto px-4;
+}
+
+.logo {
+  @apply text-yellow-400 text-2xl font-bold hover:text-yellow-500 transition-colors;
+}
+
+.nav-link {
+  @apply text-yellow-400 hover:text-yellow-500 transition-colors;
+}
+
+.primary-button {
+  @apply bg-yellow-400 text-black px-6 py-2 rounded font-semibold 
+         hover:bg-yellow-500 transition-all duration-300;
+}
+
+/* Smooth scrolling ve daha iyi font rendering */
+* {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Özel scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--background-rgb));
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fbbf24;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+} 
