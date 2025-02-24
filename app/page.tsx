@@ -58,7 +58,7 @@ const taxis = {
       isPremium: false,
       features: ["Şehir Turu", "Turistik Gezi", "Rehberlik"],
       phone: "+90 555 456 7890",
-      image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?w=800"
+      image: "https://images.unsplash.com/photo-1617650728468-8581e439c864?w=800"
     },
     {
       id: 6,
@@ -97,9 +97,9 @@ const ads = [
   },
   {
     id: 4,
-    title: "Fındık Bahçesi",
-    description: "Organik fındık ürünleri ve yöresel lezzetler",
-    image: "https://images.unsplash.com/photo-1613365850361-ad85467a6eb6?w=800",
+    title: "Manzara Cafe & Bistro",
+    description: "Modern atmosferde enfes kahve ve ev yapımı lezzetler",
+    image: "https://images.unsplash.com/photo-1600093463592-2e8d315280ba?w=800",
     link: "#"
   }
 ];

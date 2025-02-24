@@ -27,12 +27,12 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
           : 'shadow-lg'
       }`}
     >
-      <div className={`relative h-56`}>
+      <div className={`relative h-56 group`}>
         <Image 
           src={taxi.image}
           alt={taxi.name}
           fill
-          className="object-cover transition-transform duration-700 hover:scale-105"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         {taxi.isPremium && (
           <motion.div 
@@ -48,6 +48,26 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
             ? 'from-black/60 via-black/30' 
             : 'from-black/50'
         } to-transparent z-[1]`} />
+
+        {/* Reklam Alanı Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+          <div className="bg-black/75 px-6 py-4 rounded-lg transform -rotate-12 shadow-xl border border-yellow-400/50">
+            <p className="text-yellow-400 font-semibold text-sm md:text-base whitespace-nowrap">
+              Bu Alana Reklam Verebilirsiniz
+            </p>
+          </div>
+        </div>
+
+        {/* Reklam İletişim Butonu */}
+        <motion.a
+          href="tel:08501234567"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="absolute bottom-4 left-4 bg-yellow-400 text-black px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-yellow-500 transition-all z-20 opacity-0 group-hover:opacity-100 shadow-lg flex items-center gap-2"
+        >
+          <PhoneIcon className="h-4 w-4" />
+          <span>Reklam Ver</span>
+        </motion.a>
       </div>
 
       <div className={`p-8 ${
