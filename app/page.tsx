@@ -26,7 +26,7 @@ const taxis = {
       isPremium: true,
       features: ["Özel Şoför", "Lüks Araçlar", "Rezervasyon İmkanı"],
       phone: "+90 555 345 6789",
-      image: "https://images.unsplash.com/photo-1599012307530-1c4e0636f5b9?w=800"
+      image: "https://images.unsplash.com/photo-1597007066704-67bf2068d5b2?w=800"
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ const taxis = {
       isPremium: true,
       features: ["Wifi", "İkram Servisi", "Kurumsal Fatura"],
       phone: "+90 555 789 1234",
-      image: "https://images.unsplash.com/photo-1632923057155-dd35366509c9?w=800"
+      image: "https://images.unsplash.com/photo-1597007066704-67bf2068d5b2?w=800"
     }
   ],
   standard: [
