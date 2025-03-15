@@ -11,33 +11,30 @@ export default function Header() {
       className="bg-black sticky top-0 z-50 shadow-lg"
     >
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 sm:grid sm:grid-cols-3">
+          {/* Logo - mobilde solda, tablet/desktop'ta ortada */}
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="text-yellow-400 text-lg md:text-2xl font-bold cursor-pointer flex items-center"
+            className="text-yellow-400 font-bold cursor-pointer flex items-center sm:justify-center sm:col-start-2"
           >
-            <span className="text-lg md:text-2xl mr-2">🚕</span>
-            <span>Beşikdüzü Taksi</span>
+            <span className="text-base md:text-lg lg:text-2xl mr-1.5 md:mr-2">🚕</span>
+            <span className="text-base md:text-lg lg:text-2xl">Beşikdüzü Taksi</span>
           </motion.div>
           
-          <div className="flex items-center gap-2 sm:gap-8">
+          {/* Sol Kısım - mobilde görünmez */}
+          <div className="hidden sm:flex sm:justify-start sm:col-start-1 sm:row-start-1"></div>
+          
+          {/* Sağ Kısım - Taksi Çağır Butonu */}
+          <div className="flex justify-end sm:col-start-3 sm:row-start-1">
             <motion.a
               href="tel:08501234567"
               whileHover={{ scale: 1.05 }}
-              className="text-yellow-400 flex items-center cursor-pointer text-sm sm:text-base"
-            >
-              <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
-              <span className="hidden sm:inline">0850 123 45 67</span>
-              <span className="sm:hidden">Ara</span>
-            </motion.a>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-yellow-400 text-black px-3 sm:px-6 py-1.5 sm:py-2 rounded-lg text-sm sm:text-base font-bold hover:bg-yellow-500 transition-all whitespace-nowrap"
+              className="bg-yellow-400 text-black px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm md:text-base font-bold hover:bg-yellow-500 transition-all whitespace-nowrap flex items-center"
             >
+              <PhoneIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 mr-1 sm:mr-1.5 md:mr-2" />
               <span>Taksi Çağır</span>
-            </motion.button>
+            </motion.a>
           </div>
         </div>
       </div>

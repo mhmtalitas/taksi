@@ -48,7 +48,7 @@ const taxis = {
       isPremium: false,
       features: ["Uygun Fiyat", "Hızlı Hizmet", "Güvenli Yolculuk"],
       phone: "+90 555 234 5678",
-      image: "https://images.unsplash.com/photo-1534520092937-4717c0b18103?w=800"
+      image: "https://images.unsplash.com/photo-1597007066704-67bf2068d5b2?w=800"
     },
     {
       id: 5,
@@ -99,7 +99,7 @@ const ads = [
     id: 4,
     title: "Manzara Cafe & Bistro",
     description: "Modern atmosferde enfes kahve ve ev yapımı lezzetler",
-    image: "https://images.unsplash.com/photo-1600093463592-2e8d315280ba?w=800",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
     link: "#"
   }
 ];
@@ -119,7 +119,7 @@ export default function Home() {
             Beşikdüzü Taksi Hizmetleri
           </h1>
           <p className="text-xl text-gray-800 max-w-2xl mx-auto">
-            Beşikdüzü&apos;nün her noktasına 7/24 güvenli ve konforlu ulaşım
+            Beşikdüzü&apos;nden Türkiye&apos;nin her noktasına 7/24 güvenli ve konforlu ulaşım
           </p>
         </motion.div>
 
