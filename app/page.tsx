@@ -15,7 +15,7 @@ const taxis = {
       rating: 4.9,
       isPremium: true,
       features: ["Lüks Araçlar", "Profesyonel Sürücüler", "7/24 Hizmet"],
-      phone: "+90 555 123 4567",
+      phone: "+90 555 XXX XXXX",
       image: "https://images.unsplash.com/photo-1597007066704-67bf2068d5b2?w=800"
     },
     {
@@ -25,8 +25,8 @@ const taxis = {
       rating: 5.0,
       isPremium: true,
       features: ["Özel Şoför", "Lüks Araçlar", "Rezervasyon İmkanı"],
-      phone: "+90 555 345 6789",
-      image: "https://images.unsplash.com/photo-1597007066704-67bf2068d5b2?w=800"
+      phone: "+90 555 XXX XXXX",
+      image: "https://images.unsplash.com/photo-1599012307530-1c4e0636f5b9?w=800"
     },
     {
       id: 3,
@@ -35,8 +35,8 @@ const taxis = {
       rating: 4.9,
       isPremium: true,
       features: ["Wifi", "İkram Servisi", "Kurumsal Fatura"],
-      phone: "+90 555 789 1234",
-      image: "https://images.unsplash.com/photo-1597007066704-67bf2068d5b2?w=800"
+      phone: "+90 555 XXX XXXX",
+      image: "https://images.unsplash.com/photo-1632923057155-dd35366509c9?w=800"
     }
   ],
   standard: [
@@ -47,8 +47,8 @@ const taxis = {
       rating: 4.5,
       isPremium: false,
       features: ["Uygun Fiyat", "Hızlı Hizmet", "Güvenli Yolculuk"],
-      phone: "+90 555 234 5678",
-      image: "https://images.unsplash.com/photo-1597007066704-67bf2068d5b2?w=800"
+      phone: "+90 555 XXX XXXX",
+      image: "https://images.unsplash.com/photo-1534520092937-4717c0b18103?w=800"
     },
     {
       id: 5,
@@ -57,7 +57,7 @@ const taxis = {
       rating: 4.7,
       isPremium: false,
       features: ["Şehir Turu", "Turistik Gezi", "Rehberlik"],
-      phone: "+90 555 456 7890",
+      phone: "+90 555 XXX XXXX",
       image: "https://images.unsplash.com/photo-1617650728468-8581e439c864?w=800"
     },
     {
@@ -67,7 +67,7 @@ const taxis = {
       rating: 4.6,
       isPremium: false,
       features: ["24 Saat", "Hızlı Teslimat", "Güler Yüzlü Hizmet"],
-      phone: "+90 555 890 1234",
+      phone: "+90 555 XXX XXXX",
       image: "https://images.unsplash.com/photo-1511527844068-006b95d162c2?w=800"
     }
   ]

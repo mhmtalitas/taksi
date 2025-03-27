@@ -18,6 +18,12 @@ interface TaxiCardProps {
 }
 
 export default function TaxiCard({ taxi }: TaxiCardProps) {
+  // Telefon numarasını maskele
+  const formatPhone = (phone: string) => {
+    if (phone.startsWith('+90 555')) return phone;
+    return '+90 555 XXX XXXX';
+  };
+
   return (
     <motion.div
       whileHover={{ scale: 1.02, boxShadow: taxi.isPremium ? '0 25px 30px -5px rgba(234, 179, 8, 0.3)' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
@@ -60,7 +66,7 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
 
         {/* Reklam İletişim Butonu */}
         <motion.a
-          href="tel:08501234567"
+          href="tel:+905553335555"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="absolute bottom-4 left-4 bg-yellow-400 text-black px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-yellow-500 transition-all z-20 opacity-0 group-hover:opacity-100 shadow-lg flex items-center gap-2"
@@ -125,7 +131,7 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
         </div>
 
         <motion.a
-          href={`tel:${taxi.phone}`}
+          href={`tel:${formatPhone(taxi.phone)}`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className={`flex items-center justify-center gap-2 w-full py-4 rounded-lg font-bold transition-all ${
@@ -135,7 +141,7 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
           }`}
         >
           <PhoneIcon className="h-5 w-5" />
-          <span>{taxi.phone}</span>
+          <span>{formatPhone(taxi.phone)}</span>
         </motion.a>
       </div>
     </motion.div>

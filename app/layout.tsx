@@ -5,22 +5,49 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Beşikdüzü Taksi - 7/24 Güvenli ve Konforlu Ulaşım',
-  description: 'Beşikdüzü\'nün güvenilir taksi hizmeti. VIP transfer, şehir turu ve 7/24 taksi hizmetleri. En uygun fiyatlarla güvenli yolculuk için bizi tercih edin.',
+  title: 'Beşikdüzü Taksi - Trabzon Bölgesi 7/24 Güvenli ve Konforlu Ulaşım',
+  description: 'Beşikdüzü, Vakfıkebir, Çarşıbaşı, Eynesil ve Büyükliman bölgesi için 7/24 güvenilir taksi hizmeti. Trabzon\'un tüm ilçelerine ve Türkiye\'nin her noktasına konforlu ulaşım.',
   keywords: [
+    // Ana Anahtar Kelimeler
     'taksi',
     'beşikdüzü taksi',
     'beşikdüzü',
     'taxi',
     'beşikdüzü taxi',
+    
+    // Hizmet Çeşitleri
     'vip taksi',
     'transfer hizmeti',
     'şehir turu',
     'havalimanı transfer',
-    'trabzon taksi',
     '7/24 taksi',
     'güvenli taksi',
-    'ekonomik taksi'
+    'ekonomik taksi',
+    
+    // Trabzon İli 
+    'trabzon taksi',
+    'trabzon havalimanı transfer',
+    'trabzon şehirlerarası taksi',
+    
+    // Çevre İlçeler
+    'vakfıkebir taksi',
+    'çarşıbaşı taksi',
+    'eynesil taksi',
+    'büyükliman taksi',
+    'görele taksi',
+    
+    // Bölge + Hizmet Kombinasyonları
+    'beşikdüzü havalimanı transfer',
+    'vakfıkebir havalimanı taksi',
+    'çarşıbaşı vip taksi',
+    'trabzon beşikdüzü ulaşım',
+    'büyükliman bölgesi taksi',
+    
+    // Uzun Kuyruklu Anahtar Kelimeler
+    'beşikdüzü 7/24 taksi hizmeti',
+    'trabzon beşikdüzü ekonomik taksi',
+    'vakfıkebir güvenilir taksi hizmeti',
+    'beşikdüzü trabzon havalimanı ulaşım'
   ],
   authors: [{ name: 'Mehmet Ali Taş' }],
   creator: 'Mehmet Ali Taş',
@@ -30,8 +57,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Beşikdüzü Taksi - 7/24 Güvenli ve Konforlu Ulaşım',
-    description: 'Beşikdüzü\'nün güvenilir taksi hizmeti. VIP transfer, şehir turu ve 7/24 taksi hizmetleri. En uygun fiyatlarla güvenli yolculuk için bizi tercih edin.',
+    title: 'Beşikdüzü Taksi - Trabzon Bölgesi 7/24 Güvenli ve Konforlu Ulaşım',
+    description: 'Beşikdüzü, Vakfıkebir, Çarşıbaşı, Eynesil ve Büyükliman bölgesi için 7/24 güvenilir taksi hizmeti. Trabzon\'un tüm ilçelerine ve Türkiye\'nin her noktasına konforlu ulaşım.',
     url: 'https://besikduzutaksi.com',
     siteName: 'Beşikdüzü Taksi',
     locale: 'tr_TR',
@@ -64,7 +91,7 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://besikduzutaksi.com" />
         <meta name="geo.region" content="TR-61" />
-        <meta name="geo.placename" content="Beşikdüzü" />
+        <meta name="geo.placename" content="Beşikdüzü, Trabzon" />
         <meta name="geo.position" content="41.0533;39.2316" />
         <meta name="ICBM" content="41.0533, 39.2316" />
       </head>

@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center">
                 <PhoneIcon className="h-5 w-5 mr-2" />
-                <span>0850 123 45 67</span>
+                <span>+90 555 XXX XXXX</span>
               </div>
               <div className="flex items-center">
                 <MapPinIcon className="h-5 w-5 mr-2" />
