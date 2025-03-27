@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://besikduzutaksi.com/sitemap.xml 

@@ -26,7 +26,7 @@ const taxis = {
       isPremium: true,
       features: ["Özel Şoför", "Lüks Araçlar", "Rezervasyon İmkanı"],
       phone: "+90 555 XXX XXXX",
-      image: "https://images.unsplash.com/photo-1599012307530-1c4e0636f5b9?w=800"
+      image: "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800"
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ const taxis = {
       isPremium: true,
       features: ["Wifi", "İkram Servisi", "Kurumsal Fatura"],
       phone: "+90 555 XXX XXXX",
-      image: "https://images.unsplash.com/photo-1632923057155-dd35366509c9?w=800"
+      image: "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800"
     }
   ],
   standard: [
@@ -48,7 +48,7 @@ const taxis = {
       isPremium: false,
       features: ["Uygun Fiyat", "Hızlı Hizmet", "Güvenli Yolculuk"],
       phone: "+90 555 XXX XXXX",
-      image: "https://images.unsplash.com/photo-1534520092937-4717c0b18103?w=800"
+      image: "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800"
     },
     {
       id: 5,
