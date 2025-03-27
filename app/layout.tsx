@@ -64,6 +64,10 @@ export const metadata: Metadata = {
     locale: 'tr_TR',
     type: 'website',
   },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
   robots: {
     index: true,
     follow: true,
@@ -90,6 +94,7 @@ export default function RootLayout({
     <html lang="tr">
       <head>
         <link rel="canonical" href="https://besikduzutaksi.com" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta name="geo.region" content="TR-61" />
         <meta name="geo.placename" content="Beşikdüzü, Trabzon" />
         <meta name="geo.position" content="41.0533;39.2316" />
