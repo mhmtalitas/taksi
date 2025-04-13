@@ -23,11 +23,19 @@ export const metadata: Metadata = {
     '7/24 taksi',
     'güvenli taksi',
     'ekonomik taksi',
+    'özel taksi',
+    'kurumsal taksi',
+    'düğün taksi',
+    'gelin arabası',
     
     // Trabzon İli 
     'trabzon taksi',
     'trabzon havalimanı transfer',
     'trabzon şehirlerarası taksi',
+    'trabzon havaalanı taksi',
+    'trabzon gece taksi',
+    'trabzon ucuz taksi',
+    'trabzon beşikdüzü arası taksi',
     
     // Çevre İlçeler
     'vakfıkebir taksi',
@@ -35,6 +43,10 @@ export const metadata: Metadata = {
     'eynesil taksi',
     'büyükliman taksi',
     'görele taksi',
+    'tirebolu taksi',
+    'espiye taksi',
+    'şalpazarı taksi',
+    'tonya taksi',
     
     // Bölge + Hizmet Kombinasyonları
     'beşikdüzü havalimanı transfer',
@@ -42,12 +54,29 @@ export const metadata: Metadata = {
     'çarşıbaşı vip taksi',
     'trabzon beşikdüzü ulaşım',
     'büyükliman bölgesi taksi',
+    'karadeniz taksi',
+    'karadeniz tur taksi',
     
     // Uzun Kuyruklu Anahtar Kelimeler
     'beşikdüzü 7/24 taksi hizmeti',
     'trabzon beşikdüzü ekonomik taksi',
     'vakfıkebir güvenilir taksi hizmeti',
-    'beşikdüzü trabzon havalimanı ulaşım'
+    'beşikdüzü trabzon havalimanı ulaşım',
+    'beşikdüzü taksi telefon numarası',
+    'beşikdüzü ucuz taksi fiyatları',
+    'beşikdüzüde taksi nasıl çağırılır',
+    'beşikdüzü merkez taksi durağı',
+    'trabzon havalimanından beşikdüzüne taksi ücreti',
+    
+    // Özel Durumlar
+    'beşikdüzü taksi durağı',
+    'beşikdüzü merkez taksi',
+    'engelli taksi beşikdüzü',
+    'büyük bagajlı taksi',
+    'klimalı taksi',
+    'beşikdüzü online taksi çağırma',
+    'beşikdüzü taksi ücretleri',
+    'beşikdüzü taksi siparişi'
   ],
   authors: [{ name: 'Mehmet Ali Taş' }],
   creator: 'Mehmet Ali Taş',
