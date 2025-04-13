@@ -1,6 +1,7 @@
 'use client';
 
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -10,7 +11,13 @@ export default function Footer() {
           {/* Hakkımızda */}
           <div>
             <h3 className="text-xl font-bold mb-4 flex items-center">
-              <span className="text-2xl mr-2">🚕</span>
+              <Image 
+                src="/besikduzutaksi.png" 
+                width={24} 
+                height={24} 
+                alt="Beşikdüzü Taksi Logo" 
+                className="mr-2"
+              />
               Beşikdüzü Taksi
             </h3>
             <p className="text-gray-400">

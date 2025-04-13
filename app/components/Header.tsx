@@ -2,6 +2,7 @@
 
 import { PhoneIcon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Header() {
   return (
@@ -17,7 +18,13 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
             className="text-yellow-400 font-bold cursor-pointer flex items-center sm:justify-center sm:col-start-2"
           >
-            <span className="text-base md:text-lg lg:text-2xl mr-1.5 md:mr-2">🚕</span>
+            <Image 
+              src="/besikduzutaksi.png" 
+              width={30} 
+              height={30} 
+              alt="Beşikdüzü Taksi Logo" 
+              className="mr-2"
+            />
             <span className="text-base md:text-lg lg:text-2xl">Beşikdüzü Taksi</span>
           </motion.div>
           
