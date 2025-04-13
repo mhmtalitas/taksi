@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -149,6 +150,64 @@ export default function RootLayout({
         <meta name="geo.placename" content="Beşikdüzü, Trabzon" />
         <meta name="geo.position" content="41.0533;39.2316" />
         <meta name="ICBM" content="41.0533, 39.2316" />
+        
+        {/* Google için JSON-LD yapısal verisi */}
+        <Script
+          id="schema-org-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Beşikdüzü Taksi',
+              alternateName: 'Beşikdüzü Taksi Hizmetleri',
+              url: 'https://besikduzutaksi.com',
+              logo: 'https://besikduzutaksi.com/favicon.svg',
+              description: 'Beşikdüzü ve Trabzon bölgesinde 7/24 güvenilir taksi hizmeti.',
+              areaServed: {
+                '@type': 'GeoCircle',
+                geoMidpoint: {
+                  '@type': 'GeoCoordinates',
+                  latitude: '41.0533',
+                  longitude: '39.2316'
+                },
+                geoRadius: '50000'
+              },
+              sameAs: [
+                'https://besikduzutaksi.com'
+              ],
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+90-555-XXX-XXXX',
+                contactType: 'customer service',
+                areaServed: 'TR',
+                availableLanguage: 'Turkish'
+              }
+            })
+          }}
+        />
+        
+        {/* WebSite yapısal verisi */}
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Beşikdüzü Taksi',
+              url: 'https://besikduzutaksi.com',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://besikduzutaksi.com/search?q={search_term_string}'
+                },
+                'query-input': 'required name=search_term_string'
+              }
+            })
+          }}
+        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
