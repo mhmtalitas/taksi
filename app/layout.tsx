@@ -57,6 +57,27 @@ export const metadata: Metadata = {
     'karadeniz taksi',
     'karadeniz tur taksi',
     
+    // Beşikdüzü Organize Sanayi
+    'beşikdüzü organize sanayi bölgesi taksi',
+    'beşikdüzü osb taksi',
+    'beşikdüzü organize sanayi ulaşım',
+    'organize sanayi servis taksi',
+    'beşikdüzü sanayi bölgesine taksi',
+    'beşikdüzü fabrika taksi servisi',
+    'organize sanayi personel servisi',
+    'beşikdüzü osb işçi servisi',
+    'beşikdüzü sanayi bölgesi transfer',
+    
+    // Beşikdüzü Cezaevi
+    'beşikdüzü cezaevi taksi',
+    'beşikdüzü cezaevine taksi',
+    'beşikdüzü cezaevi ziyaretçi taksi',
+    'beşikdüzü kapalı cezaevi taksi',
+    'cezaevi ziyaret transfer',
+    'beşikdüzü cezaevi ulaşım',
+    'trabzon beşikdüzü cezaevi taksi',
+    'beşikdüzünden cezaevine ulaşım',
+    
     // Uzun Kuyruklu Anahtar Kelimeler
     'beşikdüzü 7/24 taksi hizmeti',
     'trabzon beşikdüzü ekonomik taksi',
