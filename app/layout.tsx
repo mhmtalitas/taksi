@@ -116,8 +116,9 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
+    icon: '/besikduzutaksi.png',
+    shortcut: '/besikduzutaksi.png',
+    apple: '/besikduzutaksi.png',
   },
   robots: {
     index: true,
@@ -145,7 +146,7 @@ export default function RootLayout({
     <html lang="tr">
       <head>
         <link rel="canonical" href="https://besikduzutaksi.com" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/besikduzutaksi.png" type="image/png" />
         <meta name="geo.region" content="TR-61" />
         <meta name="geo.placename" content="Beşikdüzü, Trabzon" />
         <meta name="geo.position" content="41.0533;39.2316" />
@@ -162,7 +163,7 @@ export default function RootLayout({
               name: 'Beşikdüzü Taksi',
               alternateName: 'Beşikdüzü Taksi Hizmetleri',
               url: 'https://besikduzutaksi.com',
-              logo: 'https://besikduzutaksi.com/favicon.svg',
+              logo: 'https://besikduzutaksi.com/besikduzutaksi.png',
               description: 'Beşikdüzü ve Trabzon bölgesinde 7/24 güvenilir taksi hizmeti.',
               areaServed: {
                 '@type': 'GeoCircle',
