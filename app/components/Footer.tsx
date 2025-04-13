@@ -17,6 +17,8 @@ export default function Footer() {
                 height={24} 
                 alt="Beşikdüzü Taksi Logo" 
                 className="mr-2"
+                unoptimized
+                priority
               />
               Beşikdüzü Taksi
             </h3>

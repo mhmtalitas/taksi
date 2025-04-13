@@ -24,6 +24,8 @@ export default function Header() {
               height={30} 
               alt="Beşikdüzü Taksi Logo" 
               className="mr-2"
+              unoptimized
+              priority
             />
             <span className="text-base md:text-lg lg:text-2xl">Beşikdüzü Taksi</span>
           </motion.div>
