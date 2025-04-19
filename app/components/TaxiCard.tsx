@@ -23,6 +23,7 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
   // Telefon numarasını maskele
   const formatPhone = (phone: string) => {
     if (phone.startsWith('+90 555')) return phone;
+    if (phone.startsWith('0543')) return phone; // Onur Taş'ın numarası için özel durum
     return '+90 555 XXX XXXX';
   };
 
@@ -135,22 +136,7 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
           ))}
         </div>
 
-        <div className="flex gap-2 mt-6 mb-4">
-          {/* Ara Butonu */}
-          <motion.a
-            href={`tel:${formatPhone(taxi.phone)}`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`flex items-center justify-center gap-2 w-full py-4 rounded-lg font-bold transition-all ${
-              taxi.isPremium 
-                ? 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 shadow-lg' 
-                : 'bg-yellow-400 text-black hover:bg-yellow-500'
-            }`}
-          >
-            <PhoneIcon className="h-5 w-5" />
-            <span>Ara</span>
-          </motion.a>
-
+        <div className="flex flex-col gap-2 mt-6 mb-4">
           {/* Detay Butonu */}
           <Link href={`/taksici/${taksiciSlug}`} legacyBehavior>
             <motion.a
@@ -166,11 +152,22 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
               <span>Detaylar</span>
             </motion.a>
           </Link>
-        </div>
 
-        <p className="text-center text-gray-500 text-sm">
-          {formatPhone(taxi.phone)}
-        </p>
+          {/* Telefon Butonu */}
+          <motion.a
+            href={`tel:${formatPhone(taxi.phone)}`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`flex items-center justify-center gap-2 w-full py-4 rounded-lg font-bold transition-all ${
+              taxi.isPremium 
+                ? 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 shadow-lg' 
+                : 'bg-yellow-400 text-black hover:bg-yellow-500'
+            }`}
+          >
+            <PhoneIcon className="h-5 w-5" />
+            <span>{formatPhone(taxi.phone)}</span>
+          </motion.a>
+        </div>
       </div>
     </motion.div>
   );
