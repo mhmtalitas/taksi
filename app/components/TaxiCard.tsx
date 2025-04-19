@@ -1,8 +1,9 @@
 'use client';
 
-import { PhoneIcon, StarIcon } from '@heroicons/react/24/solid';
+import { PhoneIcon, StarIcon, InformationCircleIcon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface TaxiCardProps {
   taxi: {
@@ -14,6 +15,7 @@ interface TaxiCardProps {
     features: string[];
     phone: string;
     image: string;
+    slug?: string; // Taksici sayfası için slug
   };
 }
 
@@ -23,6 +25,9 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
     if (phone.startsWith('+90 555')) return phone;
     return '+90 555 XXX XXXX';
   };
+
+  // Slug oluştur (eğer yoksa)
+  const taksiciSlug = taxi.slug || `taksici-${taxi.id}`;
 
   return (
     <motion.div
@@ -109,7 +114,7 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
           </span>
         </div>
 
-        <div className="space-y-3 mb-6">
+        <div className="space-y-2 mb-6">
           {taxi.features.map((feature, index) => (
             <motion.div 
               key={index}
@@ -130,19 +135,42 @@ export default function TaxiCard({ taxi }: TaxiCardProps) {
           ))}
         </div>
 
-        <motion.a
-          href={`tel:${formatPhone(taxi.phone)}`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className={`flex items-center justify-center gap-2 w-full py-4 rounded-lg font-bold transition-all ${
-            taxi.isPremium 
-              ? 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 shadow-lg' 
-              : 'bg-yellow-400 text-black hover:bg-yellow-500'
-          }`}
-        >
-          <PhoneIcon className="h-5 w-5" />
-          <span>{formatPhone(taxi.phone)}</span>
-        </motion.a>
+        <div className="flex gap-2 mt-6 mb-4">
+          {/* Ara Butonu */}
+          <motion.a
+            href={`tel:${formatPhone(taxi.phone)}`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`flex items-center justify-center gap-2 w-full py-4 rounded-lg font-bold transition-all ${
+              taxi.isPremium 
+                ? 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 shadow-lg' 
+                : 'bg-yellow-400 text-black hover:bg-yellow-500'
+            }`}
+          >
+            <PhoneIcon className="h-5 w-5" />
+            <span>Ara</span>
+          </motion.a>
+
+          {/* Detay Butonu */}
+          <Link href={`/taksici/${taksiciSlug}`} legacyBehavior>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`flex items-center justify-center gap-2 w-full py-4 rounded-lg font-bold transition-all ${
+                taxi.isPremium 
+                  ? 'bg-gradient-to-r from-gray-100 to-gray-300 text-gray-800 hover:from-gray-200 hover:to-gray-400 shadow-lg' 
+                  : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+              }`}
+            >
+              <InformationCircleIcon className="h-5 w-5" />
+              <span>Detaylar</span>
+            </motion.a>
+          </Link>
+        </div>
+
+        <p className="text-center text-gray-500 text-sm">
+          {formatPhone(taxi.phone)}
+        </p>
       </div>
     </motion.div>
   );
