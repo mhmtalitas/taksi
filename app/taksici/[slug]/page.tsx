@@ -12,16 +12,43 @@ import { motion } from 'framer-motion';
 // Taksici verilerini import edelim
 import { taxis } from '../../components/TaxiData';
 
+// Taksici verisi için arayüz
+interface DriverInfo {
+  fullName?: string;
+  age?: number;
+  experience?: string;
+  licensePlate?: string;
+  carModel?: string;
+  carYear?: string;
+  languages?: string[];
+  serviceAreas?: string[];
+  photo?: string;
+  about?: string;
+}
+
+interface TaxiInfo {
+  id: number;
+  name: string;
+  description: string;
+  rating: number;
+  isPremium: boolean;
+  features: string[];
+  phone: string;
+  image: string;
+  slug?: string;
+  driverInfo?: DriverInfo;
+}
+
 export default function TaksiciDetay() {
   const params = useParams();
   const slug = params.slug;
   
-  const [taksici, setTaksici] = useState<any>(null);
+  const [taksici, setTaksici] = useState<TaxiInfo | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Premium ve standart taksileri birleştir
-    const allTaxis = [...taxis.premium, ...taxis.standard];
+    const allTaxis = [...taxis.premium, ...taxis.standard] as TaxiInfo[];
     
     // Slug'a göre taksiyi bul
     const foundTaxi = allTaxis.find(taxi => taxi.slug === slug || `taksici-${taxi.id}` === slug);
