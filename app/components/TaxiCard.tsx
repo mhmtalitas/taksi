@@ -22,9 +22,8 @@ interface TaxiCardProps {
 export default function TaxiCard({ taxi }: TaxiCardProps) {
   // Telefon numarasını maskele
   const formatPhone = (phone: string) => {
-    if (phone.startsWith('+90 555')) return phone;
-    if (phone.startsWith('0543')) return phone; // Onur Taş'ın numarası için özel durum
-    return '+90 555 XXX XXXX';
+    // Tüm telefon numaraları zaten +90 555 XXX XX XX formatında
+    return phone;
   };
 
   // Slug oluştur (eğer yoksa)

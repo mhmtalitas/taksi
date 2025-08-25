@@ -7,7 +7,7 @@ export const taxis = {
       rating: 4.9,
       isPremium: true,
       features: ["Lüks Araçlar", "Profesyonel Sürücüler", "7/24 Hizmet"],
-      phone: "0543 805 01 27",
+      phone: "+90 555 XXX XX XX",
       image: "https://images.unsplash.com/photo-1619551734325-81aaf323686c?w=800",
       slug: "onur-tas",
       driverInfo: {
